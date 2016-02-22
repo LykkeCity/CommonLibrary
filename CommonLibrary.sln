@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9FE99F3B-3A05-4C6A-A992-63223E630375}"
+	ProjectSection(SolutionItems) = preProject
+		..\MatchingEngine\global.json = ..\MatchingEngine\global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1ED1ADE2-3F9B-4CF7-91A7-9773F77D37A0}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AzureStorage", "src\AzureStorage\AzureStorage.xproj", "{972DC039-F0D0-4B2E-A2D8-44E70231A963}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Common", "src\Common\Common.xproj", "{3491E13C-488E-4906-B35B-8AD8932C3618}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TcpSockets", "src\TcpSockets\TcpSockets.xproj", "{C6FB529F-78FC-4F06-B629-9D82F3C958B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{972DC039-F0D0-4B2E-A2D8-44E70231A963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{972DC039-F0D0-4B2E-A2D8-44E70231A963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{972DC039-F0D0-4B2E-A2D8-44E70231A963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{972DC039-F0D0-4B2E-A2D8-44E70231A963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3491E13C-488E-4906-B35B-8AD8932C3618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3491E13C-488E-4906-B35B-8AD8932C3618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3491E13C-488E-4906-B35B-8AD8932C3618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3491E13C-488E-4906-B35B-8AD8932C3618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6FB529F-78FC-4F06-B629-9D82F3C958B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6FB529F-78FC-4F06-B629-9D82F3C958B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6FB529F-78FC-4F06-B629-9D82F3C958B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6FB529F-78FC-4F06-B629-9D82F3C958B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{972DC039-F0D0-4B2E-A2D8-44E70231A963} = {1ED1ADE2-3F9B-4CF7-91A7-9773F77D37A0}
+		{3491E13C-488E-4906-B35B-8AD8932C3618} = {1ED1ADE2-3F9B-4CF7-91A7-9773F77D37A0}
+		{C6FB529F-78FC-4F06-B629-9D82F3C958B0} = {1ED1ADE2-3F9B-4CF7-91A7-9773F77D37A0}
+	EndGlobalSection
+EndGlobal

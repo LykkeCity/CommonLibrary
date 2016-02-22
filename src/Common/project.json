@@ -24,7 +24,7 @@
 
   "frameworks": {
 
-    "dnxcore50": {
+    "dotnet5.4": {
       "dependencies": {
       }
     }

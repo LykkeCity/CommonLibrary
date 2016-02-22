@@ -97,7 +97,7 @@ namespace TcpSockets
         public static async Task<string> ReadUtf8String(this Stream stream, int length, Encoding encoding)
         {
             var bytes = await ReadFromSocket(stream, length);
-            return encoding.GetString(bytes);
+            return encoding.GetString(bytes, 0, bytes.Length);
         }
 
         /// <summary>
@@ -199,7 +199,8 @@ namespace TcpSockets
 
             while (i != -1)
             {
-                var str = Encoding.ASCII.GetString(_buffer.CutFrom(0, i).ToArray());
+                var buf = _buffer.CutFrom(0, i).ToArray();
+                var str = Encoding.UTF8.GetString(buf, 0, buf.Length);
                 yield return str;
                 _buffer.RemoveRange(0, i + _separator.Length);
                 i = _buffer.IndexOf(_separator);

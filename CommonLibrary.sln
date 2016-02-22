@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9FE99F3B-3A05-4C6A-A992-63223E630375}"
 	ProjectSection(SolutionItems) = preProject
-		..\MatchingEngine\global.json = ..\MatchingEngine\global.json
+		global.json = global.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1ED1ADE2-3F9B-4CF7-91A7-9773F77D37A0}"

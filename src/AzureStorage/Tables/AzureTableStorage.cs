@@ -267,6 +267,11 @@ namespace AzureStorage.Tables
             return GetTable().ExecuteBatchAsync(operationsBatch);
         }
 
+        public Task EnumerateDataByChunksAsync(string partitionKey, Func<IEnumerable<T>, bool> dataToSearch)
+        {
+            var query = CompileTableQuery(partitionKey);
+            return ExecuteQueryAsync("EnumerateDataByChunksAsync", query, itm => true, dataToSearch);
+        }
 
         public virtual async Task InsertOrReplaceAsync(T item)
         {

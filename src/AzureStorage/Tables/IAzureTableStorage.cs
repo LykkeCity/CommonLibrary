@@ -47,6 +47,7 @@ namespace AzureStorage.Tables
         Task<IEnumerable<T>> ExecuteQueryAsync(TableQuery<T> rangeQuery, Func<T, Task<bool>> filter);
         Task<IEnumerable<T>> ExecuteQueryAsync(TableQuery<T> rangeQuery, Func<T, bool> filter = null);
         Task ExecuteQueryAsync(TableQuery<T> rangeQuery, Action<IEnumerable<T>> yieldResult);
+        Task EnumerateDataByChunksAsync(string partitionKey, Func<IEnumerable<T>, bool> dataToSearch);
 
     }
 

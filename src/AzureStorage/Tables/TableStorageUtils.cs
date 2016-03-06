@@ -259,6 +259,8 @@ namespace AzureStorage.Tables
 
             }
 
+      
+
 
             public static TableQuery<T> BetweenQuery(string partitionKey, string rowKeyFrom, string rowKeyTo, ToIntervalOption intervalOption)
             {
@@ -407,6 +409,31 @@ namespace AzureStorage.Tables
                 }
             }
             throw new Exception("Can not modify or update entity: "+PrintItem(create()));
+        }
+
+        public static async Task<IEnumerable<T>> TakePageAsync<T>(this IAzureTableStorage<T> tableStorage, string partitionKey, int pageNo, int itemsInPage, Func<T, bool> filter = null) where T : class, ITableEntity, new()
+        {
+            var result = new List<T>();
+
+            var fromNo = -itemsInPage * pageNo;
+
+            await tableStorage.EnumerateDataByChunksAsync(partitionKey, chunk =>
+            {
+                foreach (var item in chunk.Where(itm => filter == null || filter(itm)))
+                {
+                    if (fromNo >= 0)
+                    {
+                        result.Add(item);
+                        if (result.Count >= itemsInPage)
+                            return false;
+                    }
+                    fromNo++;
+                }
+
+                return true;
+            });
+
+            return result;
         }
 
 
